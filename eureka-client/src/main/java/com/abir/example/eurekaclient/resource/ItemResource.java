@@ -1,6 +1,7 @@
 package com.abir.example.eurekaclient.resource;
 
 import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,7 +23,7 @@ public class ItemResource {
 	@Autowired
 	RestTemplate restTemplate;
 	@GetMapping("/details/{itemID}")
-	public ItemDetails getItemDetails(@PathVariable String itemID) {
+	public ItemDetails getItemDetails(@PathVariable String itemID) throws UnknownHostException {
 		ItemDetails it = new ItemDetails();
 	//	RestTemplate restTemplate = new RestTemplate();
 		Map<String,String> uriVariables = new HashMap<>();
